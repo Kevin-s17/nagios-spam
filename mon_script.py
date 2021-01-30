@@ -1,5 +1,7 @@
 #!/usr/bin/python
+
 # coding: utf8
+
 import re,sys,commands
 
 # Afin de réagir en cas de campagne de SPAM sur les commentaires de votre site web, 
@@ -18,7 +20,7 @@ import re,sys,commands
 # -w 9 veut dire en dessous de 9 afficher WARNING au dessus afficher CRITICAL
 # -p 22 port ssh
 
-command = "/usr/local/nagios/libexec/check_by_ssh -H svcrobotics.com -C '/usr/local/nagios/libexec/check_log -F /var/log/apache2/access.log -O oldlog -q 'POST /wp-comments-post.php HTTP/1.1' -w 9' -p 22"
+command = "/usr/local/nagios/libexec/check_by_ssh -H 192.168.0.1 -C '/usr/local/nagios/libexec/check_log -F /var/log/apache2/access.log -O oldlog -q 'POST /wp-comments-post.php HTTP/1.1' -w 9' -p 22"
 
 #Determine state to pass to Nagios
 #CRITICAL = 2
